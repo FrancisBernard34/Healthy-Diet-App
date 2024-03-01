@@ -37,20 +37,6 @@ input, button, textarea, select{
   font: inherit; /* Makes these elements inherit fonts */
 }
 
-/* Turns off animation for people who don't want to see them */
-@media (prefers-reduced-motion: reduce){
-  html:focus-within {
-      scroll-behavior: auto;
-  }
-  *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-      transition: none;
-  }
-}
-
 body, html{
   height: 100%; /* Makes the body element full screen */
   scroll-behavior: smooth; /* Makes normal scrolling smooth */

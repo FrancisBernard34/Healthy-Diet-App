@@ -5,7 +5,7 @@ const dietSchema = new Schema({
   dayId: Number,
   shortDescription: String,
   fullDescription: String,
-  userId: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
@@ -16,7 +16,7 @@ export interface Diet {
   dayId: number;
   shortDescription: string;
   fullDescription: string;
-  user: { type: Schema.Types.ObjectId, ref: 'User' },
+  user: { type: Schema.Types.ObjectId | string, ref: 'User' | string },
 }
 
 export const DietModel = models.Diet || model("Diet", dietSchema);

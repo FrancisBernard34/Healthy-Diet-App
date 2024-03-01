@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { Diet } from "@/models/diet";
 
+import diet_example from "@/public/diet_example.json";
+
 import { League_Spartan } from "next/font/google";
 const leagueSpartan = League_Spartan({ subsets: ["latin"] });
 
@@ -15,18 +17,31 @@ import Link from "next/link";
 const Home: React.FC = () => {
   const [diets, setDiets] = useState<Diet[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [canRender, setCanRender] = useState(false);
   const { data: session } = useSession();
+
+  setTimeout(() => {
+    setCanRender(true);
+  }, 1000);
 
   useEffect(() => {
     async function getDiets() {
-      const data = await fetch("/diets-api")
+      const data = await fetch(`/diets-api?userEmail=${session?.user?.email}`)
         .then((res) => res.json())
         .then((data) => data);
       setDiets(data.diets);
       setIsLoading(false);
     }
-    getDiets();
-  }, []);
+
+    if (canRender) {
+      if (session) {
+        getDiets();
+      } else {
+        setDiets(diet_example.diets);
+        setIsLoading(false);
+      }
+    }
+  }, [canRender, session]);
 
   return (
     <>
@@ -45,21 +60,23 @@ const Home: React.FC = () => {
             >
               Dieta
             </h1>
-            {session ? (
-              <Link
-                href={"/diets/edit"}
-                className={`${leagueSpartan.className} text-gray-100 text-lg text-left font-bold mt-10 uppercase cursor-pointer hover:underline`}
-              >
-                editar
-              </Link>
-            ) : (
-              <a
-                onClick={() => signIn()}
-                className={`${leagueSpartan.className} text-gray-100 text-lg text-left font-bold mt-10 uppercase cursor-pointer hover:underline`}
-              >
-                crie sua dieta
-              </a>
-            )}
+            {canRender &&
+              (session ? (
+                <Link
+                  href={"/diets/edit"}
+                  onClick={() => setIsLoading(true)}
+                  className={`${leagueSpartan.className} text-gray-100 text-lg text-left font-bold mt-10 uppercase cursor-pointer hover:underline`}
+                >
+                  editar
+                </Link>
+              ) : (
+                <a
+                  onClick={() => signIn()}
+                  className={`${leagueSpartan.className} text-gray-100 text-lg text-left font-bold mt-10 uppercase cursor-pointer hover:underline`}
+                >
+                  crie sua dieta
+                </a>
+              ))}
           </div>
 
           {isLoading ? (

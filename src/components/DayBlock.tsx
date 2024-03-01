@@ -32,7 +32,7 @@ const DayBlock: React.FC<DayBlockProps> = ({ day, diet }) => {
     <>
       <div
         style={{ backgroundImage: `url(/cards/${formatarString(day)}.webp)` }}
-        className={`min-w-[340px] h-auto rounded-lg shadow-md p-8 flex flex-col items-center justify-between lg:hover:scale-105 hover:scale-100 hover:shadow-lg cursor-pointer transition-tranform duration-300`}
+        className={`min-w-[340px] h-auto rounded-lg shadow-md p-8 flex flex-col items-center justify-between lg:hover:scale-105 hover:scale-100 hover:shadow-lg cursor-pointer transition-tranform lg:duration-300`}
       >
         <h2 className="bg-white bg-opacity-85 rounded-md text-xl font-semibold mb-1 text-gray-800 p-2 select-none">
           {day}

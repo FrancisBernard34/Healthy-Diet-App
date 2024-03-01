@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 
 import { useSession, signIn, signOut } from "next-auth/react";
@@ -10,47 +10,56 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header className="bg-gray-800 text-white flex justify-between items-center px-8">
-      <Image src="/logo.png" alt="logo" width={182} height={70} className="select-none" />
+      <Image
+        src="/logo.png"
+        alt="logo"
+        width={182}
+        height={70}
+        className="select-none"
+      />
       <nav className="flex space-x-4">
-      {!session && (
-            <>
-              <span className="">
-                You are not signed in
-              </span>
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  signIn();
+        {!session && (
+          <button
+            role="button"
+            aria-label="Login"
+            className="font-bold text-lg cursor-pointer text-white bg-gray-900 hover:bg-gray-950 py-2 px-4 rounded-md motion-reduce:transition-colors motion-reduce:duration-200"
+            onClick={(e) => {
+              e.preventDefault();
+              signIn();
+            }}
+          >
+            Login
+          </button>
+        )}
+        {session && (
+          <>
+            {session.user?.image && (
+              <span
+                className="rounded-3xl w-11 h-11"
+                style={{
+                  backgroundImage: `url('${session.user.image}')`,
+                  backgroundSize: "cover",
                 }}
-              >
-                Sign in
-              </a>
-            </>
-          )}
-          {session && (
-            <>
-              {session.user?.image && (
-                <span
-                  className="rounded-3xl w-11 h-11"
-                  style={{ backgroundImage: `url('${session.user.image}')` }}
-                />
-              )}
-              <span>
-                <small>Signed in as</small>
-                <br />
-                {session.user?.name && <strong>{session.user.name}</strong>}
-              </span>
-              <a
-                className="cursor-pointer hover:underline"
-                onClick={(e) => {
-                  e.preventDefault();
-                  signOut();
-                }}
-              >
-                Sign out
-              </a>
-            </>
-          )}
+              />
+            )}
+            <span className="hidden sm:block">
+              <small>Logado como</small>
+              <br />
+              {session.user?.name && <strong>{session.user.name}</strong>}
+            </span>
+            <button
+              role="button"
+              aria-label="Login"
+              className="font-bold text-lg cursor-pointer text-white bg-gray-900 hover:bg-gray-950 py-2 px-4 rounded-md motion-reduce:transition-colors motion-reduce:duration-200"
+              onClick={(e) => {
+                e.preventDefault();
+                signOut();
+              }}
+            >
+              Sair
+            </button>
+          </>
+        )}
       </nav>
     </header>
   );

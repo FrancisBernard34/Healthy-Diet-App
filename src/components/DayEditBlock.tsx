@@ -18,14 +18,6 @@ const DayEditBlock: React.FC<DayEditBlockProps> = ({ day }) => {
     setShowPopup(false);
   };
 
-  function formatarString(plainText: string) {
-    const normalizedText = plainText
-      .normalize("NFD")
-      .replace(/[\u0300-\u036F]/g, "")
-      .toLowerCase();
-    return normalizedText;
-  }
-
   return (
     <>
       <div

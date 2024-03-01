@@ -1,6 +1,5 @@
 import "dotenv/config";
 import NextAuth from "next-auth";
-import { getToken } from "next-auth/jwt";
 import GoogleProvider from "next-auth/providers/google";
 import { MongooseAdapter } from "@choutkamartin/mongoose-adapter";
 

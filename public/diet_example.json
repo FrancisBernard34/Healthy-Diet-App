@@ -1,0 +1,74 @@
+{
+  "diets": [
+    {
+      "day": "Segunda-feira",
+      "dayId": 1,
+      "shortDescription": "Frutas, Verduras e Legumes",
+      "fullDescription": "Inicie o dia com um café da manhã leve com frutas e iogurte. No almoço, opte por uma salada colorida com frango grelhado. Para o jantar, prepare uma sopa de legumes nutritiva.",
+      "user": {
+        "type": "ObjectId",
+        "ref": "User"
+      }
+    },
+    {
+      "day": "Terça-feira",
+      "dayId": 2,
+      "shortDescription": "Proteínas e Vegetais",
+      "fullDescription": "Comece o dia com um café da manhã rico em proteínas com ovo mexido e tomate. No almoço, prepare um wrap de atum com salada verde. Para o jantar, desfrute de um salmão assado com legumes variados.",
+      "user": {
+        "type": "ObjectId",
+        "ref": "User"
+      }
+    },
+    {
+      "day": "Quarta-feira",
+      "dayId": 3,
+      "shortDescription": "Carboidratos, Proteínas e Vegetais",
+      "fullDescription": "Para o café da manhã, prepare panquecas de aveia com frutas para um início energético do dia. No almoço, cozinhe um macarrão integral com molho de tomate e legumes. À noite, saboreie um frango grelhado acompanhado de batata doce assada.",
+      "user": {
+        "type": "ObjectId",
+        "ref": "User"
+      }
+    },
+    {
+      "day": "Quinta-feira",
+      "dayId": 4,
+      "shortDescription": "Frutas, Vegetais e Proteínas",
+      "fullDescription": "Comece o dia com um smoothie verde rico em vitaminas e minerais. No almoço, prepare uma salada de quinoa com frango e legumes para um almoço nutritivo. Para o jantar, experimente uma pizza de massa integral com legumes e queijo cottage.",
+      "user": {
+        "type": "ObjectId",
+        "ref": "User"
+      }
+    },
+    {
+      "day": "Sexta-feira",
+      "dayId": 5,
+      "shortDescription": "Laticínios, Proteínas e Vegetais",
+      "fullDescription": "Para o café da manhã, escolha um iogurte com granola e frutas vermelhas para um início leve do dia. No almoço, prepare um sanduíche de pão integral com peru e salada. À noite, faça um hambúrguer caseiro com batata doce frita para um jantar saboroso.",
+      "user": {
+        "type": "ObjectId",
+        "ref": "User"
+      }
+    },
+    {
+      "day": "Sábado",
+      "dayId": 6,
+      "shortDescription": "Carboidratos, Frutas e Vegetais",
+      "fullDescription": "Comece o dia com panquecas de banana com mel para um café da manhã doce e energético. No almoço, experimente um risoto de legumes com frango. Para o jantar, desfrute de um peixe grelhado acompanhado de salada verde.",
+      "user": {
+        "type": "ObjectId",
+        "ref": "User"
+      }
+    },
+    {
+      "day": "Domingo",
+      "dayId": 7,
+      "shortDescription": "Refeições Leves e Saudáveis",
+      "fullDescription": "Aproveite o domingo para preparar refeições leves e saudáveis, como saladas, sopas e grelhados. Experimente novas receitas e ingredientes para variar o cardápio e manter uma alimentação equilibrada.",
+      "user": {
+        "type": "ObjectId",
+        "ref": "User"
+      }
+    }
+  ]
+}
