@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Popup from "./Popup";
 
-import { Diet } from "@/models/diet";
+import { Diet } from "../../models/diet";
 
 interface DayBlockProps {
   day: string;

@@ -1,5 +1,5 @@
 
-import { Diet } from "@/models/diet";
+import { Diet } from "../../models/diet";
 
 interface PopupProps {
   day: string;
