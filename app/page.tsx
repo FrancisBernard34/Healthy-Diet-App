@@ -16,14 +16,14 @@ import Link from "next/link";
 import { set } from "mongoose";
 
 const Home: React.FC = () => {
-  const [diets, setDiets] = useState<Diet[]>(diet_example.diets);
-  const [isLoading, setIsLoading] = useState(false);
+  const [diets, setDiets] = useState<Diet[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [canRender, setCanRender] = useState(false);
   const { data: session, status } = useSession();
 
   setTimeout(() => {
     setCanRender(true);
-  }, 1000);
+  }, 1500);
 
   useEffect(() => {
     async function getDiets() {
@@ -34,15 +34,16 @@ const Home: React.FC = () => {
       setIsLoading(false);
     }
 
-    if (status === "loading") {
-      setIsLoading(true);
-    }
-    if (status === "authenticated") {
-      getDiets();
-    }
-    if (status === "unauthenticated") {
-      setIsLoading(false);
-      setDiets(diet_example.diets);
+    if (canRender) {
+      if (status === "loading") {
+        setIsLoading(true);
+      }
+      if (status === "authenticated") {
+        getDiets();
+      }
+      if (status === "unauthenticated") {
+        setDiets(diet_example.diets);
+      }
     }
   }, [canRender, status, session]);
 
