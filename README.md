@@ -40,7 +40,7 @@ npm run dev
 ### Recursos adicionais:
 - Documentação do Next.js: https://nextjs.org/docs/
 - Documentação do Tailwind CSS: https://tailwindcss.com/docs/
-- Documentação do NextAuth: [URL inválido removido]
+- Documentação do NextAuth: https://next-auth.js.org/getting-started/introduction
 
 ### Contribuindo:
 Se você encontrar algum problema ou tiver alguma sugestão de melhoria, por favor, abra um issue no repositório.
