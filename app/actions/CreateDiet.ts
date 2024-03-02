@@ -55,9 +55,9 @@ export default async function createDiet(
       message: result.data.success || result.data.error,
     };
   } catch (e) {
-    console.error(e);
+    console.error(e as Error);
     return {
-      message: e,
+      message: (e as Error).message,
     };
   }
 }
