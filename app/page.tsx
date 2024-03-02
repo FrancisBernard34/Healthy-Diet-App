@@ -1,15 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Diet } from "@/models/diet";
+import { Diet } from "../models/diet";
 
-import diet_example from "@/public/diet_example.json";
+import diet_example from "../public/diet_example.json";
 
 import { League_Spartan } from "next/font/google";
 const leagueSpartan = League_Spartan({ subsets: ["latin"] });
 
 import { signIn, useSession } from "next-auth/react";
 
-import DayBlock from "@/src/components/DayBlock";
+import DayBlock from "../src/components/DayBlock";
 
 import Loading from "react-loading";
 import Link from "next/link";

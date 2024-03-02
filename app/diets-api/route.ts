@@ -1,6 +1,6 @@
-import { connectToDb } from "@/utils/db";
-import { DietModel } from "@/models/diet";
-import { UserModel } from "@/models/user";
+import { connectToDb } from "../../utils/db";
+import { DietModel } from "../../models/diet";
+import { UserModel } from "../../models/user";
 import { NextRequest, NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";

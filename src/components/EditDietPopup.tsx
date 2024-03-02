@@ -2,7 +2,7 @@
 
 import { useFormState } from "react-dom";
 
-import createDiet from "@/app/actions/CreateDiet";
+import createDiet from "@/app/actions/createDiet";
 import SubmitButton from "./SubmitButton";
 
 import { useSession } from "next-auth/react";

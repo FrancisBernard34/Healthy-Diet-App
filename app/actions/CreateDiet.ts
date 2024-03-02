@@ -1,9 +1,9 @@
 "use server";
 import "dotenv/config";
-import { DietModel } from "@/models/diet";
-import { UserModel } from "@/models/user";
-import { connectToDb } from "@/utils/db";
-import { api } from "@/utils/axios";
+import { DietModel } from "../../models/diet";
+import { UserModel } from "../../models/user";
+import { connectToDb } from "../../utils/db";
+import { api } from "../../utils/axios";
 import { AxiosResponse } from "axios";
 
 type prevState = any;
