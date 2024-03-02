@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = () => {
 
   setTimeout(() => {
     setCanRender(true);
-  }, 1000);
+  }, 1500);
 
   return (
     <header className="bg-gray-800 text-white flex justify-between items-center px-8">

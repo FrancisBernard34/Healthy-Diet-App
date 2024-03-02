@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Diet } from "../models/diet";
+import { useDietsStore } from "@/store/dietStore";
+import { useLoadingStore } from "@/store/loadingStore";
 
 import diet_example from "../public/diet_example.json";
 
@@ -13,11 +14,10 @@ import DayBlock from "../src/components/DayBlock";
 
 import Loading from "react-loading";
 import Link from "next/link";
-import { set } from "mongoose";
 
 const Home: React.FC = () => {
-  const [diets, setDiets] = useState<Diet[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { diets, setDiets } = useDietsStore();
+  const { isLoading, setIsLoading } = useLoadingStore();
   const [canRender, setCanRender] = useState(false);
   const { data: session, status } = useSession();
 
@@ -37,15 +37,14 @@ const Home: React.FC = () => {
     if (canRender) {
       if (status === "loading") {
         setIsLoading(true);
-      }
-      if (status === "authenticated") {
+      } else if (status === "authenticated") {
         getDiets();
-      }
-      if (status === "unauthenticated") {
+      } else {
         setDiets(diet_example.diets);
+        setIsLoading(false);
       }
     }
-  }, [canRender, status, session]);
+  }, [setDiets, setIsLoading, canRender, status, session]);
 
   return (
     <>

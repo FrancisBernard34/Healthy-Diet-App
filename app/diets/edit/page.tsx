@@ -2,9 +2,9 @@
 import { League_Spartan } from "next/font/google";
 const leagueSpartan = League_Spartan({ subsets: ["latin"] });
 
-import { useDayStore } from "../../../store/zustand";
+import { useDayStore } from "@/store/dayStore";
 
-import DayEditBlock from "../../../src/components/DayEditBlock";
+import DayEditBlock from "@/src/components/DayEditBlock";
 import Link from "next/link";
 
 const DietsEditPage: React.FC = () => {

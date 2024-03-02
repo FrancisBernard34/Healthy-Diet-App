@@ -4,9 +4,10 @@ Healthy é um aplicativo web criado com Next.js, Tailwind CSS, e NextAuth. Utili
 
 ## Características
 
-- **Next.js**: Utilizamos o Next.js para construir uma aplicação web moderna e eficiente.
-- **Tailwind CSS**: Para estilização, utilizamos o Tailwind CSS, que nos permite criar designs responsivos e personalizados com facilidade.
-- **NextAuth**: Para autenticação, integramos o NextAuth, permitindo que os usuários entrem com suas contas do Google.
+- **Next.js**: Utilizei o Next.js para construir uma aplicação web moderna e eficiente.
+- **Tailwind CSS**: Para estilização, utilizei o Tailwind CSS, que permite criar designs responsivos e personalizados com facilidade.
+- **NextAuth**: Para autenticação, integrei o NextAuth, permitindo que os usuários entrem com suas contas do Google.
+- **Zustand**: Utilizei Zustand para gerenciamento de estado global. Ele é leve, simples e não requer o uso de um context provider, tornando o código mais limpo e fácil de manter.
 
 ## Crie sua dieta semanal de forma fácil e rápida!
 
