@@ -57,7 +57,7 @@ export default async function createDiet(
   } catch (e) {
     console.error(e);
     return {
-      message: "Erro ao atualizar dieta",
+      message: e,
     };
   }
 }
