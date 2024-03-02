@@ -1,4 +1,6 @@
 import path from "path";
+import { getGlobals } from 'common-es'
+const { __dirname } = getGlobals(import.meta.url)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
