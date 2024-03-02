@@ -3,6 +3,8 @@ import { DietModel } from "../../models/diet";
 import { UserModel } from "../../models/user";
 import { NextRequest, NextResponse } from "next/server";
 
+import { getToken } from "next-auth/jwt";
+
 export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest, response: NextResponse) {
@@ -55,9 +57,17 @@ export async function GET(request: NextRequest, response: NextResponse) {
   try {
     await connectToDb();
 
-    const token = request.nextUrl.searchParams.get("formToken");
+    const userEmail = request.nextUrl.searchParams.get("userEmail");
 
-    if (token !== process.env.FORM_TOKEN) {
+    const session = await getToken({
+      req: request,
+      secret: process.env.SECRET || process.env.NEXTAUTH_SECRET,
+      secureCookie:
+        process.env.NEXTAUTH_URL?.startsWith("https://") ??
+        !!process.env.VERCEL_URL,
+    });
+
+    if (session?.email !== userEmail) {
       return new Response(
         JSON.stringify({ error: "Não autorizado" }),
         {
@@ -70,7 +80,7 @@ export async function GET(request: NextRequest, response: NextResponse) {
     }
 
     const user = await UserModel.findOne({
-      email: request.nextUrl.searchParams.get("userEmail"),
+      email: userEmail,
     });
 
     const diets = await DietModel.find({ user: user?._id }).sort({

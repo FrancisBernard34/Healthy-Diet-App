@@ -1,5 +1,4 @@
 "use client";
-import("dotenv/config")
 import { useEffect, useState } from "react";
 import { useDietsStore } from "@/store/dietStore";
 import { useLoadingStore } from "@/store/loadingStore";
@@ -28,7 +27,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     async function getDiets() {
-      const data = await fetch(`/diets-api?userEmail=${session?.user?.email}&formToken=${process.env.FORM_TOKEN}`)
+      const data = await fetch(`/diets-api?userEmail=${session?.user?.email}`)
         .then((res) => res.json())
         .then((data) => data);
       setDiets(data.diets);

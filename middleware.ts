@@ -9,7 +9,7 @@ export async function middleware(req: NextRequest) {
   ) {
     const session = await getToken({
       req,
-      secret: process.env.SECRET,
+      secret: process.env.SECRET || process.env.NEXTAUTH_SECRET,
       secureCookie:
         process.env.NEXTAUTH_URL?.startsWith("https://") ??
         !!process.env.VERCEL_URL,
