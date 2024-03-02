@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 
 import { useSession, signIn, signOut } from "next-auth/react";
@@ -7,6 +8,11 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   const { data: session } = useSession();
+  const [canRender, setCanRender] = useState(false);
+
+  setTimeout(() => {
+    setCanRender(true);
+  }, 1000);
 
   return (
     <header className="bg-gray-800 text-white flex justify-between items-center px-8">
@@ -18,7 +24,7 @@ const Header: React.FC<HeaderProps> = () => {
         className="select-none"
       />
       <nav className="flex space-x-4">
-        {!session && (
+        {canRender && !session && (
           <button
             role="button"
             aria-label="Login"
@@ -31,7 +37,7 @@ const Header: React.FC<HeaderProps> = () => {
             Login
           </button>
         )}
-        {session && (
+        {canRender && session && (
           <>
             {session.user?.image && (
               <span
