@@ -1,5 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://healthy-diet-app.vercel.app",
+  // change this to your server's URL
+  baseURL: "http://localhost:3000",
 });

@@ -32,7 +32,12 @@ npm install
 - `GOOGLE_ID`: ID do Google OAuth
 - `GOOGLE_SECRET`: Chave secreta do Google OAuth
 
-4. **Iniciar o servidor de desenvolvimento**:
+4. Altere a variável `baseURL` no arquivo `axios.ts` para a URL da sua aplicação:
+```
+baseURL: "http://meu-app.com"
+```
+
+5. **Iniciar o servidor de desenvolvimento**:
 ```
 npm run dev
 ```
