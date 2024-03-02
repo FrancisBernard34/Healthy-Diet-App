@@ -9,8 +9,5 @@ type DietsStore = {
 
 export const useDietsStore = create<DietsStore>((set) => ({
   diets: [],
-  setDiets: (diets) => {
-    console.log("Updating diets:", diets);
-    set({ diets });
-  },
+  setDiets: (diets) => set({ diets }),
 }));
