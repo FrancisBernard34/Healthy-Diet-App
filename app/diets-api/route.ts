@@ -55,6 +55,20 @@ export async function GET(request: NextRequest, response: NextResponse) {
   try {
     await connectToDb();
 
+    const token = request.nextUrl.searchParams.get("formToken");
+
+    if (token !== process.env.FORM_TOKEN) {
+      return new Response(
+        JSON.stringify({ error: "Não autorizado" }),
+        {
+          status: 403,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+
     const user = await UserModel.findOne({
       email: request.nextUrl.searchParams.get("userEmail"),
     });
