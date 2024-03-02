@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = () => {
           <button
             role="button"
             aria-label="Login"
-            className="font-bold text-lg cursor-pointer text-white bg-gray-900 hover:bg-gray-950 py-2 px-4 rounded-md motion-reduce:transition-colors motion-reduce:duration-200"
+            className="font-bold text-lg cursor-pointer text-white bg-gray-900 hover:bg-gray-950 py-2 px-4 select-none rounded-md motion-reduce:transition-colors motion-reduce:duration-200"
             onClick={(e) => {
               e.preventDefault();
               signIn();
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = () => {
             <button
               role="button"
               aria-label="Login"
-              className="font-bold text-lg cursor-pointer text-white bg-gray-900 hover:bg-gray-950 py-2 px-4 rounded-md motion-reduce:transition-colors motion-reduce:duration-200"
+              className="font-bold text-lg cursor-pointer text-white bg-gray-900 hover:bg-gray-950 py-2 px-4 select-none rounded-md motion-reduce:transition-colors motion-reduce:duration-200"
               onClick={(e) => {
                 e.preventDefault();
                 signOut();

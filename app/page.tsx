@@ -65,14 +65,14 @@ const Home: React.FC = () => {
                 <Link
                   href={"/diets/edit"}
                   onClick={() => setIsLoading(true)}
-                  className={`${leagueSpartan.className} text-gray-100 text-lg text-left font-bold mt-10 uppercase cursor-pointer hover:underline`}
+                  className={`${leagueSpartan.className} text-gray-100 text-lg text-left font-bold mt-10 uppercase cursor-pointer hover:underline select-none`}
                 >
                   editar
                 </Link>
               ) : (
                 <a
                   onClick={() => signIn()}
-                  className={`${leagueSpartan.className} text-gray-100 text-lg text-left font-bold mt-10 uppercase cursor-pointer hover:underline`}
+                  className={`${leagueSpartan.className} text-gray-100 text-lg text-left font-bold mt-10 uppercase cursor-pointer hover:underline select-none`}
                 >
                   crie sua dieta
                 </a>
