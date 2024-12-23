@@ -13,6 +13,19 @@ Healthy é um aplicativo web criado com Next.js, Tailwind CSS, e NextAuth. Utili
 
 Com Healthy, você pode personalizar sua dieta semanal de acordo com suas necessidades e preferências, facilitando a gestão de sua alimentação.
 
+## Screenshots
+
+Confira abaixo algumas capturas de tela da aplicação:
+
+- Página inicial:
+  ![Página inicial](https://i.ibb.co/VvZHsGT/Screenshot-2024-12-23-at-14-26-44.png)
+
+- Página de edição de dieta:
+  ![Página de edição de dieta](https://i.ibb.co/t26xVbF/Screenshot-2024-12-23-at-14-27-38.png)
+
+- Popup para alterar informações de uma dieta:
+  ![Popup para alterar informações de uma dieta](https://i.ibb.co/t2RhWdX/Screenshot-2024-12-23-at-14-27-57.png)
+
 ## Como clonar e configurar o projeto
 
 1. **Clonar o repositório**:
